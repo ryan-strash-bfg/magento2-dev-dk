@@ -71,7 +71,8 @@ RUN /etc/init.d/mysql restart
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer
+    mv composer.phar /usr/local/bin/composer && \
+    composer self-update 1.10.13
 
 COPY ./composer/auth.json /root/.composer/auth.json
 
